@@ -42,6 +42,22 @@ button { font-family: inherit; }
 .title-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 10px; }
 h1 { margin: 0; min-width: 0; font-size: 20px; line-height: 1.25; letter-spacing: 0; word-break: keep-all; overflow-wrap: anywhere; }
 .counter, .question-status { color: var(--muted); font-size: 13px; white-space: nowrap; }
+.top-actions { display: flex; align-items: center; justify-content: flex-end; gap: 8px; flex-wrap: wrap; }
+.top-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+}
+.top-link:hover { border-color: var(--accent); background: var(--accent-soft); }
 .pager { display: grid; grid-template-columns: auto 1fr auto; gap: 10px; align-items: center; }
 .nav-btn, .q-btn, .exam-btn {
   border: 1px solid var(--line);
@@ -119,6 +135,8 @@ tbody tr:nth-child(even) td { background: #fbfdff; }
   body { font-size: 14px; }
   .top-inner { padding: 12px; }
   .title-row { align-items: flex-start; flex-direction: column; gap: 5px; }
+  .top-actions { justify-content: flex-start; width: 100%; }
+  .top-link { flex: 1 1 120px; }
   h1 { font-size: 17px; }
   .topbar { overflow-x: hidden; }
   .pager { display: flex; flex-wrap: wrap; gap: 8px; width: 100%; }
@@ -235,7 +253,11 @@ tbody tr:nth-child(even) td { background: #fbfdff; }
       <div class="top-inner">
         <div class="title-row">
           <h1 data-exam-title>조경산업기사 필기 문항별 해설</h1>
-          <div class="counter" data-counter>1 / 80</div>
+          <div class="top-actions">
+            <a class="top-link" href="./study.html">개념 카드</a>
+            <a class="top-link" href="./quiz.html">빈출 퀴즈</a>
+            <div class="counter" data-counter>1 / 80</div>
+          </div>
         </div>
         <nav class="pager" aria-label="문항 이동">
           <button class="nav-btn" type="button" data-prev>이전</button>
