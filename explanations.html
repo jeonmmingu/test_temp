@@ -205,6 +205,30 @@ tbody tr:nth-child(even) td { background: #fbfdff; }
 }
 .side-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 14px; }
 .side-title { font-size: 17px; font-weight: 800; margin: 0; }
+.side-mascot {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  gap: 9px;
+  align-items: center;
+  margin-bottom: 14px;
+  padding: 10px;
+  border: 1px solid #bfd4f5;
+  border-radius: 8px;
+  background: #f7fbff;
+}
+.side-mascot img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 10px rgba(15, 23, 42, 0.14));
+}
+.side-mascot p {
+  margin: 0;
+  color: #334155;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1.4;
+}
 .side-toggle {
   flex: 0 0 auto;
   min-height: 34px;
@@ -224,6 +248,7 @@ tbody tr:nth-child(even) td { background: #fbfdff; }
 .layout.sidebar-collapsed .sidebar { overflow: hidden; padding: 12px 8px; }
 .layout.sidebar-collapsed .side-head { justify-content: center; margin-bottom: 0; }
 .layout.sidebar-collapsed .side-title,
+.layout.sidebar-collapsed .side-mascot,
 .layout.sidebar-collapsed .exam-list { display: none; }
 .layout.sidebar-collapsed .side-toggle { width: 48px; min-height: 40px; padding: 0; }
 .main-pane { min-width: 0; }
@@ -247,6 +272,7 @@ tbody tr:nth-child(even) td { background: #fbfdff; }
   }
   .side-head { margin-bottom: 8px; }
   .side-title { display: block; font-size: 15px; white-space: nowrap; }
+  .side-mascot { display: none; }
   .layout.sidebar-collapsed .sidebar { padding: 8px 12px; }
   .layout.sidebar-collapsed .side-head { justify-content: space-between; }
   .layout.sidebar-collapsed .side-title { display: block; }
@@ -285,6 +311,10 @@ tbody tr:nth-child(even) td { background: #fbfdff; }
     <div class="side-head">
       <p class="side-title">기출 회차</p>
       <button class="side-toggle" type="button" data-sidebar-toggle aria-expanded="true" aria-controls="exam-list">접기</button>
+    </div>
+    <div class="side-mascot" aria-label="또로 해설 안내">
+      <img src="./assets/ddoro-cutout.png" alt="또로 마스코트">
+      <p>또로가 회차별 함정 포인트를 같이 따라갑니다.</p>
     </div>
     <div class="exam-list" id="exam-list" data-exam-list></div>
   </aside>
