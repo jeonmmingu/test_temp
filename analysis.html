@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>조경산업기사 필기 해설집 분석 보고</title>
+<style>
+:root {
+  --bg: #f6f8fb;
+  --panel: #ffffff;
+  --text: #172033;
+  --muted: #65758b;
+  --line: #d9e2ef;
+  --accent: #2563eb;
+  --accent-soft: #eaf1ff;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; }
+body {
+  font-family: "Malgun Gothic", "Apple SD Gothic Neo", "Noto Sans CJK KR", Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.68;
+  font-size: 15px;
+  -webkit-text-size-adjust: 100%;
+}
+a { color: var(--accent); text-decoration: none; font-weight: 800; }
+a:hover { text-decoration: underline; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 28px 20px 56px; }
+.top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+h1 { margin: 0 0 8px; font-size: 28px; line-height: 1.25; letter-spacing: 0; }
+.lead { margin: 0; color: var(--muted); max-width: 720px; }
+.home {
+  flex: 0 0 auto;
+  min-height: 40px;
+  padding: 7px 13px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin: 22px 0;
+}
+.stat, .section {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+.stat { padding: 16px; }
+.label { margin: 0 0 4px; color: var(--muted); font-size: 13px; font-weight: 800; }
+.value { margin: 0; font-size: 24px; font-weight: 900; line-height: 1.2; }
+.section { margin-top: 14px; padding: 18px; }
+h2 { margin: 0 0 12px; font-size: 19px; line-height: 1.35; }
+p { margin: 0 0 10px; }
+ul { margin: 0; padding-left: 20px; }
+li { margin: 5px 0; }
+.table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; }
+table { width: 100%; border-collapse: collapse; min-width: 760px; background: #fff; }
+th, td { border-bottom: 1px solid var(--line); border-right: 1px solid var(--line); padding: 10px 12px; text-align: left; vertical-align: top; }
+th:last-child, td:last-child { border-right: 0; }
+tr:last-child td { border-bottom: 0; }
+th { background: #eef4fc; font-weight: 900; }
+th:nth-child(2), td:nth-child(2) { width: 76px; white-space: nowrap; text-align: center; }
+th:nth-child(3), td:nth-child(3) { width: 160px; }
+.ok { color: #166534; font-weight: 900; }
+.note { color: #9a3412; font-weight: 800; }
+@media (max-width: 760px) {
+  .wrap { padding: 20px 12px 40px; }
+  .top { display: block; }
+  h1 { font-size: 23px; }
+  .home { display: inline-block; margin-top: 14px; }
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .section { padding: 15px; }
+  table { min-width: 860px; }
+}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header class="top">
+    <div>
+      <h1>조경산업기사 필기 해설집 분석 보고</h1>
+      <p class="lead">통합 해설 HTML에 포함된 기출 회차, 문항 구조 검증 결과, 원문 PDF 대조가 필요한 지점을 한눈에 보기 위한 관리용 페이지입니다.</p>
+    </div>
+    <a class="home" href="./index.html">해설집으로 이동</a>
+  </header>
+
+  <section class="stats" aria-label="요약 통계">
+    <div class="stat">
+      <p class="label">수록 회차</p>
+      <p class="value">14개</p>
+    </div>
+    <div class="stat">
+      <p class="label">전체 문항</p>
+      <p class="value">1,120문항</p>
+    </div>
+    <div class="stat">
+      <p class="label">회차별 문항</p>
+      <p class="value">80문항</p>
+    </div>
+    <div class="stat">
+      <p class="label">검증 상태</p>
+      <p class="value">통과</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>생성 기준</h2>
+    <ul>
+      <li>각 기출 PDF별 1번부터 80번까지 문항 번호가 연속되는지 확인했습니다.</li>
+      <li>각 회차마다 정답 80개가 누락 없이 연결되는지 확인했습니다.</li>
+      <li>개별 HTML을 만든 뒤, 최종적으로 하나의 통합 HTML에 합쳤습니다.</li>
+      <li>모바일 화면에서는 회차 탭과 문항 번호가 가로로 밀리지 않도록 반응형 구조를 적용했습니다.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>회차별 검증 결과</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>문서</th>
+            <th>검증</th>
+            <th>산출물</th>
+            <th>피드백</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>2017년 제1회</td><td class="ok">통과</td><td>2017_1회</td><td>문항/정답 80개 구조 검증 완료. 그림·도표형 선택지 15번은 원문 PDF 대조 권장.</td></tr>
+          <tr><td>2017년 제2회</td><td class="ok">통과</td><td>2017_2회</td><td>문항/정답 80개 구조 검증 완료.</td></tr>
+          <tr><td>2017년 제4회</td><td class="ok">통과</td><td>2017_4회</td><td>문항/정답 80개 구조 검증 완료.</td></tr>
+          <tr><td>2018년 제1회</td><td class="ok">통과</td><td>2018_1회</td><td>문항/정답 80개 구조 검증 완료. 그림·도표형 선택지 15, 80번은 원문 PDF 대조 권장.</td></tr>
+          <tr><td>2018년 제2회</td><td class="ok">통과</td><td>2018_2회</td><td>문항/정답 80개 구조 검증 완료. 그림·도표형 선택지 11, 19, 26번은 원문 PDF 대조 권장.</td></tr>
+          <tr><td>2018년 제4회</td><td class="ok">통과</td><td>2018_4회</td><td>문항/정답 80개 구조 검증 완료. 그림·도표형 선택지 19번은 원문 PDF 대조 권장.</td></tr>
+          <tr><td>2019년 제1회</td><td class="ok">통과</td><td>2019_1회</td><td>문항/정답 80개 구조 검증 완료. 그림·도표형 선택지 48번은 원문 PDF 대조 권장.</td></tr>
+          <tr><td>2019년 제2회 A형</td><td class="ok">통과</td><td>2019_2회_A형</td><td>로컬 PDF가 이미지 스캔형이라 CBTBank 2019-04-27 문항 텍스트를 보조 출처로 사용. 문항/정답 80개 구조 검증 완료.</td></tr>
+          <tr><td>2019년 제4회</td><td class="ok">통과</td><td>2019_4회</td><td>문항/정답 80개 구조 검증 완료. 그림·도표형 선택지 16, 32번은 원문 PDF 대조 권장.</td></tr>
+          <tr><td>2020년 제1·2회 통합</td><td class="ok">통과</td><td>2020_1_2회_통합</td><td>문항/정답 80개 구조 검증 완료. 그림·도표형 선택지 15번은 원문 PDF 대조 권장.</td></tr>
+          <tr><td>2020년 제3회</td><td class="ok">통과</td><td>2020_3회</td><td>문항/정답 80개 구조 검증 완료. 그림·도표형 선택지 15번은 원문 PDF 대조 권장.</td></tr>
+          <tr><td>2021년 제1회</td><td class="ok">통과</td><td>2021_1회</td><td>문항/정답 80개 구조 검증 완료.</td></tr>
+          <tr><td>2022년 제1회</td><td class="ok">통과</td><td>2022_1회</td><td>기존 전문가 검토본 재사용. 문항/해설 80개 구조 검증 완료.</td></tr>
+          <tr><td>2024년 제1회</td><td class="ok">통과</td><td>2024_1회</td><td>문항/정답 80개 구조 검증 완료.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>주의할 지점</h2>
+    <p><span class="note">그림·도표형 선택지</span>는 PDF에서 이미지 형태로 들어간 경우가 있어, 텍스트 해설만으로는 선택지 형태를 완전히 복원하기 어렵습니다. 해당 문항은 정답 위치와 해설 흐름은 정리했지만, 실제 학습 때 원문 PDF와 함께 보는 편이 안전합니다.</p>
+    <p>제외된 파일은 <strong>3-20260517133552729.pdf</strong> 하나이며, 80문항 기출문제가 아니라 출제기준 문서라 해설 뷰어 대상에서 제외했습니다.</p>
+  </section>
+</main>
+</body>
+</html>
