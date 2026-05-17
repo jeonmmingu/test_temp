@@ -173,7 +173,7 @@ h1 { margin: 0; font-size: 21px; line-height: 1.25; letter-spacing: 0; word-brea
   .top-inner { padding: 14px 12px 12px; }
   .title-row { display: block; }
   h1 { font-size: 19px; margin-bottom: 10px; }
-  .links { display: grid; grid-template-columns: 1fr 1fr; }
+  .links { display: grid; grid-template-columns: 1fr; }
   .link-btn { text-align: center; }
   .wrap { padding: 14px 10px 34px; }
   .body { padding: 16px 14px; }
@@ -348,6 +348,21 @@ function choose(choice) {
   modalBackdrop.classList.add("open");
 }
 
+function resetChoice() {
+  answered = false;
+  const buttons = [...answers.querySelectorAll(".answer-btn")];
+  buttons.forEach(btn => {
+    btn.classList.remove("selected", "correct", "wrong");
+    const box = btn.querySelector(".box");
+    if (box) box.textContent = "";
+  });
+}
+
+function closeModal(reset = true) {
+  modalBackdrop.classList.remove("open");
+  if (reset) resetChoice();
+}
+
 function move(delta) {
   const items = pool();
   currentIndex = (currentIndex + delta + items.length) % items.length;
@@ -363,13 +378,16 @@ function randomQuestion() {
 prevBtn.addEventListener("click", () => move(-1));
 nextBtn.addEventListener("click", () => move(1));
 randomBtn.addEventListener("click", randomQuestion);
-modalClose.addEventListener("click", () => modalBackdrop.classList.remove("open"));
+modalClose.addEventListener("click", () => closeModal());
 modalNext.addEventListener("click", () => {
-  modalBackdrop.classList.remove("open");
+  closeModal(false);
   randomQuestion();
 });
 modalBackdrop.addEventListener("click", event => {
-  if (event.target === modalBackdrop) modalBackdrop.classList.remove("open");
+  if (event.target === modalBackdrop) closeModal();
+});
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape" && modalBackdrop.classList.contains("open")) closeModal();
 });
 render();
 </script>
