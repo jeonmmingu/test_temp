@@ -210,7 +210,7 @@ h1 { margin: 0; font-size: 21px; line-height: 1.25; letter-spacing: 0; word-brea
         <button class="nav-btn primary" type="button" data-next>다음 문제</button>
       </div>
       <button class="nav-btn primary" type="button" data-random style="width:100%; margin-top:10px;">빈도 가중 랜덤 출제</button>
-      <p class="note">출제 횟수는 같은 핵심어가 기출 문제 또는 정답에 등장한 횟수입니다. 많이 나온 개념일수록 랜덤 출제에서 더 자주 나옵니다.</p>
+      <p class="note">문제는 실제 기출에서 가져온 대표 문항입니다. 횟수는 같은 핵심어가 기출 문제 또는 정답에 등장한 관련 기출 횟수이며, 많이 나온 개념일수록 랜덤 출제에서 더 자주 나옵니다.</p>
     </div>
   </section>
 </main>
@@ -295,7 +295,7 @@ function render() {
 
   meta.innerHTML = `
     <span class="pill">${item.subject}</span>
-    <span class="pill warn">유사 출제 ${item.count}회</span>
+    <span class="pill warn">관련 기출 ${item.count}회</span>
     <span class="pill">${item.term}</span>
     <span class="pill">${item.exam} ${item.num}번</span>
   `;
@@ -336,7 +336,7 @@ function choose(choice) {
   if (correct) {
     modalText.innerHTML = `
       <p><strong>맞은 이유:</strong> ${item.correctReason}</p>
-      <p>이 문제는 <strong>${item.term}</strong> 계열이 유사 기출에서 ${item.count}회 반복된 빈출 유형입니다.</p>
+      <p>이 문제는 <strong>${item.term}</strong> 계열의 핵심어가 관련 기출에서 ${item.count}회 반복된 빈출 유형입니다.</p>
     `;
   } else {
     modalText.innerHTML = `
